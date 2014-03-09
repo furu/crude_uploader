@@ -32,3 +32,8 @@ gem 'padrino', '0.12.0'
 # %w(core gen helpers cache mailer admin).each do |g|
 #   gem 'padrino-' + g, '0.12.0'
 # end
+
+group :development do
+  gem 'pry'
+  gem 'pry-byebug'
+end
