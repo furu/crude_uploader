@@ -7,6 +7,14 @@ module CrudeUploader
 
     enable :sessions
 
+    get '/' do
+      render :index
+    end
+
+    post '/files' do
+      binding.pry
+    end
+
     ##
     # Caching support.
     #

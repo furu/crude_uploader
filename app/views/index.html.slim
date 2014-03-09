@@ -1,0 +1,13 @@
+doctype html
+html
+  head
+
+  body
+    form action="/files" method="post" enctype="multipart/form-data"
+      input type="file" name="file"
+      div
+        label
+          | Password:
+          input type="password" name="password"
+      div
+      input type="submit"
