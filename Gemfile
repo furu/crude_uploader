@@ -18,6 +18,9 @@ gem 'slim'
 gem 'activerecord', '>= 3.1', :require => 'active_record'
 gem 'mysql2'
 
+# For ActiveModel has_secure_password
+gem 'bcrypt-ruby'
+
 # Test requirements
 gem 'rspec', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
@@ -36,4 +39,5 @@ gem 'padrino', '0.12.0'
 group :development do
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-padrino'
 end

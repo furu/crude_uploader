@@ -12,7 +12,24 @@ module CrudeUploader
     end
 
     post '/files' do
-      binding.pry
+      f = ::UploadedFile.new(
+        original_file_name: params[:uploaded_file][:filename],
+        private: params[:private] == 'private' ? true : false,
+        content: params[:uploaded_file][:tempfile].read,
+        expiration: params[:expiration],
+        password_digest: params[:password],
+      )
+      if f.save
+        redirect to("/files/#{f.id}")
+      else
+        redirect to('/')
+      end
+    end
+
+    get '/files/:id' do
+      @file = ::UploadedFile.find(params[:id])
+      # binding.pry
+      # render :show
     end
 
     ##

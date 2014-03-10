@@ -4,10 +4,30 @@ html
 
   body
     form action="/files" method="post" enctype="multipart/form-data"
-      input type="file" name="file"
       div
         label
-          | Password:
-          input type="password" name="password"
+          | File: 
+          input type="file" name="uploaded_file"
       div
-      input type="submit"
+        label
+          | Password: 
+          input type="password" name="password" value=""
+      div
+        label
+          | Password Confirmation: 
+          input type="password" name="password_confirmation" value=""
+      div
+        label
+          | Private?: 
+          label
+            | public
+            input type="radio" name="private" value="public"
+          label
+            | private
+            input type="radio" name="private" value="private"
+      div
+        label
+          | Expiry: 
+          input type="datetime-local" name="expiration"
+      div
+        input type="submit"
